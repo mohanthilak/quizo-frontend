@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.animes_div {
+  margin: 60px 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+.animes_div .anime_header h1 {
+  font-family: "Righteous", cursive;
+  letter-spacing: -1px;
+  font-weight: 500;
+  color: #000;
+}
+
+.animes_div .anime_header hr {
+  margin-top: 0;
+  width: 150px;
+  height: 2px;
+  opacity: 1;
+}
+
+.animes_div .animes_list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.animes_div .animes_list .anime_anime {
+  width: 190px;
+  margin: 10px 40px 40px 10px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.animes_div .animes_list .anime_anime:hover {
+  transform: scale(1.2);
+}
+
+.animes_div .animes_list .anime_anime .image {
+  height: 290px;
+  width: 180px;
+}
+
+.animes_div .animes_list .anime_anime .image img {
+  height: 290px;
+  width: 180px;
+  border-radius: 15%;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  object-fit: cover;
+}
+
+.animes_div .animes_list .anime_anime .description h6 {
+  font-family: "Righteous", cursive;
+  margin: 5px 0;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.animes_div .animes_list .anime_anime .description div p {
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  margin-bottom: 0;
+}

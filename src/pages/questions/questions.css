@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+.back_link {
+  font-family: "Bangers", cursive;
+  font-size: 40px;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.question_div,
+.question_text {
+  width: 70vw;
+}
+
+.question_div .question_text h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.question_div .options {
+  font-size: 24px;
+  font-weight: 400;
+}
+.question_div .buttons button {
+  background: transparent;
+  outline: none;
+  border-style: none;
+  background-color: black;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-family: "Bangers", cursive;
+  letter-spacing: 3px;
+}
+.question_div .options_div {
+  width: 70vw;
+  height: 300px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.question_div .options_div div button {
+  background: transparent;
+  outline: none;
+  border-style: none;
+  border: 3px solid black;
+  color: black;
+  width: 400px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.question_div .options_div div button:hover {
+  background-color: black;
+  color: white;
+}
+
+.question_div .options_div div {
+  height: 150px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.question_div .score_div {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.question_div .score_div h1 {
+  font-family: "Bangers", cursive;
+  font-size: 66px;
+  margin: 20px 20px;
+  line-height: 100px;
+  letter-spacing: 1px;
+}
+
+.question_div .score_div h1 span {
+  font-size: larger;
+}
+
+.question_div .score_div p {
+  font-family: "Nunito", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  opacity: 0.7;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .question_div .score_div h1 {
+    font-size: 56px;
+  }
+  .question_div .score_div p {
+    font-size: 24px;
+  }
+}
