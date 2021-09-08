@@ -5,8 +5,8 @@ import { LoginContext } from "../../contexts/LoginContext";
 import axios from "axios";
 import "./navbar.css";
 
+axios.defaults.withCredentials = true;
 export default function NavBar({ socket }) {
-  axios.defaults.withCredentials = true;
   const { isLoggedIn, setIsLoggedIn, setUser } = useContext(LoginContext);
   const sendLogOut = () => {
     axios({
