@@ -6,6 +6,7 @@ import axios from "axios";
 import "./navbar.css";
 
 export default function NavBar({ socket }) {
+  axios.defaults.withCredentials = true;
   const { isLoggedIn, setIsLoggedIn, setUser } = useContext(LoginContext);
   const sendLogOut = () => {
     axios({
@@ -24,7 +25,6 @@ export default function NavBar({ socket }) {
   useEffect(() => {
     axios({
       method: "GET",
-      withCredentials: true,
       url: "https://quizzooo.herokuapp.com/getuser",
     })
       .then((res) => {
