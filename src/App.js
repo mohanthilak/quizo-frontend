@@ -12,7 +12,7 @@ import Chat from "./pages/Chat/Chat";
 import Profile from "./pages/Profile/Profile";
 import io from "socket.io-client";
 import useIsLoggedIn from "./useIsLoggedIn";
-const socket = io.connect("http://localhost:4000");
+const socket = io.connect("https://quizzooo.herokuapp.com/");
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useIsLoggedIn("isLoggedIn", false);
