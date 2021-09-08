@@ -15,7 +15,7 @@ export default function Profile() {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://quizzooo.herokuapp.com/user/getdata",
+      url: "https://quizzooo.herokuapp.com/user/getdata",
     }).then((res) => {
       console.log(res.data);
       if (res.data.isLoggedIn) {

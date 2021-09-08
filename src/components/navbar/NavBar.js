@@ -5,13 +5,14 @@ import { LoginContext } from "../../contexts/LoginContext";
 import axios from "axios";
 import "./navbar.css";
 
-axios.defaults.withCredentials = true;
 export default function NavBar({ socket }) {
+  axios.defaults.withCredentials = true;
   const { isLoggedIn, setIsLoggedIn, setUser } = useContext(LoginContext);
   const sendLogOut = () => {
     axios({
       method: "GET",
       withCredentials: true,
+      //   url: "https://quizzooo.herokuapp.com/logout",
       url: "https://quizzooo.herokuapp.com/logout",
     }).then((res) => {
       if (res.data.isLoggedOut) {
@@ -25,6 +26,8 @@ export default function NavBar({ socket }) {
   useEffect(() => {
     axios({
       method: "GET",
+      withCredentials: true,
+      //   url: "https://quizzooo.herokuapp.com/getuser",
       url: "https://quizzooo.herokuapp.com/getuser",
     })
       .then((res) => {

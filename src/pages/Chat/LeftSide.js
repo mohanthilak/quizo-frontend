@@ -22,7 +22,7 @@ export default function LeftSide({
         searchingUser,
       },
       withCredentials: true,
-      url: `http://quizzooo.herokuapp.com/user/${user._id}/findusers`,
+      url: `https://quizzooo.herokuapp.com/user/${user._id}/findusers`,
     }).then((res) => {
       setSearchResults(res.data.users);
     });

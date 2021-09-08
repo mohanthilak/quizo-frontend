@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import dazai from "./dazai.jpg";
-import dazai1 from "./dazai1.png";
 import backLogo from "./back.png";
 
 export default function RightSide({
@@ -43,7 +41,7 @@ export default function RightSide({
         userId: user._id,
         clientId: clientId,
       },
-      url: "http://quizzooo.herokuapp.com/checkchat",
+      url: "https://quizzooo.herokuapp.com/checkchat",
     }).then((res) => {
       setClient(res.data.client);
       if (res.data.textedBefore) {

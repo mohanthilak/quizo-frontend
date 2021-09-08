@@ -10,7 +10,7 @@ export default function Animes() {
     console.log("sdasasdsad");
     axios({
       method: "GET",
-      url: "http://quizzooo.herokuapp.com/portals",
+      url: "https://quizzooo.herokuapp.com/portals",
     }).then((res) => {
       console.log(res);
       setPortals(res.data.portals);
