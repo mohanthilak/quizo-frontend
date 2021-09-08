@@ -10,8 +10,8 @@ export default function NavBar({ socket }) {
   const sendLogOut = () => {
     axios({
       method: "GET",
-      url: "http://localhost:4000/logout",
       withCredentials: true,
+      url: "http://localhost:4000/logout",
     }).then((res) => {
       if (res.data.isLoggedOut) {
         setIsLoggedIn(false);
@@ -24,8 +24,8 @@ export default function NavBar({ socket }) {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "http://localhost:4000/getuser",
       withCredentials: true,
+      url: "http://localhost:4000/getuser",
     }).then((res) => {
       if (res.data.isLoggedIn) {
         setIsLoggedIn(true);
