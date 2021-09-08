@@ -26,13 +26,17 @@ export default function NavBar({ socket }) {
       method: "GET",
       withCredentials: true,
       url: "http://localhost:4000/getuser",
-    }).then((res) => {
-      if (res.data.isLoggedIn) {
-        setIsLoggedIn(true);
-      } else {
-        setIsLoggedIn(false);
-      }
-    });
+    })
+      .then((res) => {
+        if (res.data.isLoggedIn) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+      })
+      .catch((e) => {
+        console.log(e, "error");
+      });
   }, []);
 
   return (

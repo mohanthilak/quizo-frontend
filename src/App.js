@@ -13,7 +13,7 @@ import Profile from "./pages/Profile/Profile";
 import axios from "axios";
 import io from "socket.io-client";
 import useIsLoggedIn from "./useIsLoggedIn";
-const socket = io.connect("https://quizzooo.herokuapp.com/");
+const socket = io.connect("https://quizzooo.herokuapp.com");
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useIsLoggedIn("isLoggedIn", false);
