@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LoginContext } from "../../contexts/LoginContext";
 import axios from "axios";
@@ -11,7 +11,7 @@ export default function NavBar({ socket }) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/logout",
+      url: "https://quizzooo.herokuapp.com/logout",
     }).then((res) => {
       if (res.data.isLoggedOut) {
         setIsLoggedIn(false);
@@ -25,7 +25,7 @@ export default function NavBar({ socket }) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/getuser",
+      url: "https://quizzooo.herokuapp.com/getuser",
     })
       .then((res) => {
         if (res.data.isLoggedIn) {
@@ -58,39 +58,22 @@ export default function NavBar({ socket }) {
             <Nav.Link className="nav-link" as={Link} to="/">
               HOME
             </Nav.Link>
-            <NavDropdown
-              title={
-                <img
-                  src="https://download.logo.wine/logo/Microsoft_account/Microsoft_account-Logo.wine.png"
-                  alt=""
-                  style={{ width: "55px", height: "30px" }}
-                />
-              }
-              id="navbarScrollingDropdown"
-            >
-              {isLoggedIn ? (
-                <>
-                  <NavDropdown.Item onClick={sendLogOut}>
-                    Logout
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    <NavDropdown.Item as={Link} to="profile">
-                      PROFILE
-                    </NavDropdown.Item>
-                  </NavDropdown.Item>
-                </>
-              ) : (
-                <>
-                  <NavDropdown.Item as={Link} to="signin">
-                    SIGN IN
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="signup">
-                    SIGN UP
-                  </NavDropdown.Item>
-                </>
-              )}
-            </NavDropdown>
+
+            {isLoggedIn ? (
+              <Nav.Link className="nav-link" onClick={sendLogOut}>
+                Logout
+              </Nav.Link>
+            ) : (
+              <>
+                <Nav.Link className="nav-link" as={Link} to="/signin">
+                  SIGNIN
+                </Nav.Link>
+
+                <Nav.Link className="nav-link" as={Link} to="/signup">
+                  SIGNUP
+                </Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -24,7 +24,7 @@ function App() {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/getuser",
+      url: "https://quizzooo.herokuapp.com/getuser",
     }).then((res) => {
       if (res.data.isLoggedIn) {
         setIsLoggedIn(true);
