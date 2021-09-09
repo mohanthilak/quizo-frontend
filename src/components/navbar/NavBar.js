@@ -15,7 +15,6 @@ export default function NavBar({ socket }) {
       //   url: "https://quizzooo.herokuapp.com/logout",
       url: "https://quizzooo.herokuapp.com/logout",
     }).then((res) => {
-      console.log(res);
       if (res.data.isLoggedOut) {
         setIsLoggedIn(false);
         setUser(null);
@@ -32,6 +31,7 @@ export default function NavBar({ socket }) {
       url: "https://quizzooo.herokuapp.com/getuser",
     })
       .then((res) => {
+        console.log(res);
         if (res.data.isLoggedIn) {
           setIsLoggedIn(true);
         } else {
