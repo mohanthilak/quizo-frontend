@@ -7,7 +7,6 @@ export default function Animes() {
   const [portals, setPortals] = useState();
 
   useEffect(() => {
-    console.log("sdasasdsad");
     axios({
       method: "GET",
       url: "https://quizzooo.herokuapp.com/portals",

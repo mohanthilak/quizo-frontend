@@ -43,12 +43,12 @@ export default function Chat({ socket }) {
       withCredentials: true,
       url: "https://quizzooo.herokuapp.com/user/getdata",
     }).then((res) => {
-      console.log(res.data);
+      console.log(res);
       if (res.data.isLoggedIn) {
         setUser(res.data.user[0]);
       }
     });
-  }, []);
+  }, [isLoggedIn]);
 
   if (!isLoggedIn) {
     return (
