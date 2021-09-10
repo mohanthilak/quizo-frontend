@@ -54,7 +54,7 @@ export default function RightSide({
   }, [clientId]);
 
   useEffect(() => {
-    textDiv.scrollTop = textDiv.scrollHeight;
+    textDiv.current.scrollIntoView();
   }, [messages]);
 
   return (
