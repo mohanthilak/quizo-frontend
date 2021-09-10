@@ -31,7 +31,6 @@ export default function NavBar({ socket }) {
       url: "https://quizzooo.herokuapp.com/getuser",
     })
       .then((res) => {
-        console.log(res);
         if (res.data.isLoggedIn) {
           setIsLoggedIn(true);
         } else {
@@ -64,9 +63,14 @@ export default function NavBar({ socket }) {
             </Nav.Link>
 
             {isLoggedIn ? (
-              <Nav.Link className="nav-link" onClick={sendLogOut}>
-                Logout
-              </Nav.Link>
+              <>
+                <Nav.Link className="nav-link" onClick={sendLogOut}>
+                  LOGOUT
+                </Nav.Link>
+                <Nav.Link className="nav-link" as={Link} to="/profile">
+                  PROFILE
+                </Nav.Link>
+              </>
             ) : (
               <>
                 <Nav.Link className="nav-link" as={Link} to="/signin">
