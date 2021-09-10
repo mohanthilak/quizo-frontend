@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import backLogo from "./back.png";
 
@@ -13,6 +13,7 @@ export default function RightSide({
   const [messages, setMessages] = useState([]);
   const [client, setClient] = useState(false);
   const [text, setText] = useState("");
+  const textDiv = useRef();
 
   const sendText = () => {
     if (text === "") return;
@@ -52,7 +53,9 @@ export default function RightSide({
     });
   }, [clientId]);
 
-  // !client?changeView? "chat_side no_display": "chat_side full_display" : "chat_side"
+  useEffect(() => {
+    textDiv.scrollTop = textDiv.scrollHeight;
+  }, [messages]);
 
   return (
     <div
@@ -65,7 +68,6 @@ export default function RightSide({
           ? "chat_side full_display"
           : "chat_side"
       }
-      //   className={!client && changeView ? "chat_side no_display" : "chat_side"}
     >
       {client ? (
         <>
@@ -93,7 +95,7 @@ export default function RightSide({
             </div>
           </div>
           <div className="chat_section">
-            <div className="text_section">
+            <div className="text_section" ref={textDiv}>
               {messages &&
                 messages.map((item, i) => (
                   <div
