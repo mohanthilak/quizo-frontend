@@ -13,7 +13,7 @@ export default function RightSide({
   const [messages, setMessages] = useState([]);
   const [client, setClient] = useState(false);
   const [text, setText] = useState("");
-  const textDiv = useRef();
+  const messagesEndRef = useRef(null);
 
   const sendText = () => {
     if (text === "") return;
@@ -53,9 +53,11 @@ export default function RightSide({
     });
   }, [clientId]);
 
-  useEffect(() => {
-    textDiv.current.scrollIntoView();
-  }, [messages]);
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(scrollToBottom, [messages]);
 
   return (
     <div
@@ -95,7 +97,7 @@ export default function RightSide({
             </div>
           </div>
           <div className="chat_section">
-            <div className="text_section" ref={textDiv}>
+            <div className="text_section">
               {messages &&
                 messages.map((item, i) => (
                   <div
@@ -108,6 +110,7 @@ export default function RightSide({
                     <p>{item.message}</p>
                   </div>
                 ))}
+              <div ref={messagesEndRef} />
             </div>
             <div className="typing_section">
               <input
