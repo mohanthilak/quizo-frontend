@@ -9,7 +9,7 @@ export default function Profile() {
   const { isLoggedIn } = useContext(LoginContext);
   const [user, setUser] = useState();
   const [imageLink, setImageLink] = useState(false);
-  const [file, setFile] = useState("dfas");
+  const [file, setFile] = useState(false);
 
   const uploadImage = () => {
     const data = new FormData();
@@ -79,14 +79,12 @@ export default function Profile() {
               onChange={(e) => {
                 const filee = e.target.files[0];
                 setFile(filee);
-                setTimeout(() => {
-                  uploadImage();
-                }, 5000);
               }}
               name="file"
               id="file"
             />
           </div>
+          {file ? <button onClick={uploadImage}>change?</button> : ""}
         </div>
 
         {/* username */}
