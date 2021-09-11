@@ -91,12 +91,13 @@ export default function Profile() {
               type="file"
               onChange={(e) => {
                 const filee = e.target.files[0];
+                console.log(e.target.files[0]);
                 setFile(filee);
-                uploadImage();
               }}
               name="file"
               id="file"
             />
+            <button onClick={uploadImage}>Change?</button>
           </div>
         </div>
 
