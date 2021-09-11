@@ -9,7 +9,7 @@ export default function Profile() {
   const { isLoggedIn } = useContext(LoginContext);
   const [user, setUser] = useState();
   const [imageLink, setImageLink] = useState(false);
-  const [file, setFile] = useState();
+  const [file, setFile] = useState("dfas");
 
   const uploadImage = () => {
     const data = new FormData();
@@ -21,9 +21,6 @@ export default function Profile() {
       withCredentials: true,
       data,
       url: `https://quizzooo.herokuapp.com/image/${user._id}`,
-    }).then((res) => {
-      console.log(res);
-      setImageLink(res.data.path);
     });
   };
 
