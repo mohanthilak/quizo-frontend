@@ -81,7 +81,7 @@ export default function Profile() {
                 setFile(filee);
                 setTimeout(() => {
                   uploadImage();
-                }, 2000);
+                }, 3000);
               }}
               name="file"
               id="file"
