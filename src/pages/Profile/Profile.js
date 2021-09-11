@@ -8,13 +8,14 @@ import "./profile.css";
 export default function Profile() {
   const { isLoggedIn } = useContext(LoginContext);
   const [user, setUser] = useState();
-  const [file, setFile] = useState();
   const [imageLink, setImageLink] = useState(false);
+  const [file, setFile] = useState();
 
   const uploadImage = () => {
     const data = new FormData();
-    console.log(file, "file");
     data.append("propic", file);
+    console.log(file, "file");
+
     axios({
       method: "POST",
       withCredentials: true,
@@ -83,7 +84,21 @@ export default function Profile() {
                 setFile(filee);
                 uploadImage();
               }}
-              name="myfile"
+              name="file"
+              id="file"
+            />
+          </div>
+          <div>
+            <label>dafjho</label>
+            <input
+              type="file"
+              onChange={(e) => {
+                const filee = e.target.files[0];
+                setFile(filee);
+                uploadImage();
+              }}
+              name="file"
+              id="file"
             />
           </div>
         </div>
