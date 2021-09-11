@@ -12,16 +12,18 @@ export default function Profile() {
   const [file, setFile] = useState(false);
 
   const uploadImage = () => {
-    const data = new FormData();
-    data.append("propic", file);
-    console.log(file, "file");
+    setTimeout(() => {
+      const data = new FormData();
+      data.append("propic", file);
+      console.log(file, "file");
 
-    axios({
-      method: "POST",
-      withCredentials: true,
-      data,
-      url: `https://quizzooo.herokuapp.com/image/${user._id}`,
-    });
+      axios({
+        method: "POST",
+        withCredentials: true,
+        data,
+        url: `https://quizzooo.herokuapp.com/image/${user._id}`,
+      });
+    }, 1000);
   };
 
   useEffect(() => {
@@ -79,6 +81,7 @@ export default function Profile() {
               onChange={(e) => {
                 const filee = e.target.files[0];
                 setFile(filee);
+                uploadImage();
               }}
               name="file"
               id="file"
