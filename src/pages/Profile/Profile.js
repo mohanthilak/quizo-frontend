@@ -84,7 +84,13 @@ export default function Profile() {
               id="file"
             />
           </div>
-          {file ? <button onClick={uploadImage}>change?</button> : ""}
+          {file ? (
+            <button className="btn-submit" onClick={uploadImage}>
+              change?
+            </button>
+          ) : (
+            ""
+          )}
         </div>
 
         {/* username */}

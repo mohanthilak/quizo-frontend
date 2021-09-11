@@ -4,6 +4,13 @@
   /* background-color: aqua; */
 }
 
+.btn-submit{
+    height: 70px;
+    width: 100px;
+    outline: none;
+    border: none;
+}
+
 .image_div img {
   width: 100px;
   height: 100px;
