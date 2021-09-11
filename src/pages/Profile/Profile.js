@@ -12,7 +12,7 @@ export default function Profile() {
   const [file, setFile] = useState(false);
 
   const uploadImage = () => {
-    setTimeout(() => {
+    if (file) {
       const data = new FormData();
       data.append("propic", file);
       console.log(file, "file");
@@ -23,7 +23,7 @@ export default function Profile() {
         data,
         url: `https://quizzooo.herokuapp.com/image/${user._id}`,
       });
-    }, 1000);
+    }
   };
 
   useEffect(() => {
