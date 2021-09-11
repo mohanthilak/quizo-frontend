@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { LoginContext } from "../../contexts/LoginContext";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import "./profile.css";
 
@@ -12,18 +12,16 @@ export default function Profile() {
   const [file, setFile] = useState(false);
 
   const uploadImage = () => {
-    if (file) {
-      const data = new FormData();
-      data.append("propic", file);
-      console.log(file, "file");
+    const data = new FormData();
+    data.append("propic", file);
+    console.log(file, "file");
 
-      axios({
-        method: "POST",
-        withCredentials: true,
-        data,
-        url: `https://quizzooo.herokuapp.com/image/${user._id}`,
-      });
-    }
+    axios({
+      method: "POST",
+      withCredentials: true,
+      data,
+      url: `https://quizzooo.herokuapp.com/image/${user._id}`,
+    });
   };
 
   useEffect(() => {
@@ -81,16 +79,15 @@ export default function Profile() {
               onChange={(e) => {
                 const filee = e.target.files[0];
                 setFile(filee);
-                uploadImage();
               }}
               name="file"
               id="file"
             />
           </div>
           {file ? (
-            <button className="btn-submit" onClick={uploadImage}>
-              change?
-            </button>
+            <Button variant="info" onClick={uploadImage}>
+              Change?
+            </Button>
           ) : (
             ""
           )}
