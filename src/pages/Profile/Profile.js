@@ -79,7 +79,7 @@ export default function Profile() {
               onChange={(e) => {
                 const filee = e.target.files[0];
                 setFile(filee);
-                setTimeout(uploadImage, 10000);
+                setTimeout(uploadImage, 2000);
               }}
               name="file"
               id="file"
