@@ -79,25 +79,11 @@ export default function Profile() {
               onChange={(e) => {
                 const filee = e.target.files[0];
                 setFile(filee);
-                uploadImage();
+                setTimeout(uploadImage, 100);
               }}
               name="file"
               id="file"
             />
-          </div>
-          <div>
-            <label>dafjho</label>
-            <input
-              type="file"
-              onChange={(e) => {
-                const filee = e.target.files[0];
-                console.log(e.target.files[0]);
-                setFile(filee);
-              }}
-              name="file"
-              id="file"
-            />
-            <button onClick={uploadImage}>Change?</button>
           </div>
         </div>
 
