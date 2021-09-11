@@ -12,16 +12,16 @@ export default function Profile() {
   const [imageLink, setImageLink] = useState(false);
 
   const uploadImage = () => {
-    const formData = new FormData();
-    formData.append("propic", file);
+    const data = new FormData();
+    console.log(file, "file");
+    data.append("propic", file);
     axios({
       method: "POST",
       withCredentials: true,
-      data: {
-        formData,
-      },
+      data,
       url: `https://quizzooo.herokuapp.com/image/${user._id}`,
     }).then((res) => {
+      console.log(res);
       setImageLink(res.data.path);
     });
   };
