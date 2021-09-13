@@ -13,6 +13,9 @@ export default function SignIn(props) {
   const [redirectPath, setRedirectPath] = useState(
     props.location.state ? props.location.state.next : false
   );
+  const [redirectText, setRedirectText] = useState(
+    props.location.state ? props.location.state.message : false
+  );
 
   const sendData = () => {
     axios({
@@ -36,7 +39,7 @@ export default function SignIn(props) {
     <Container>
       <div className="signIn_page">
         <h3>Sign In</h3>
-        <p>asd</p>
+        {redirectText ? <p>{redirectText}</p> : ""}
         <div>
           <label htmlFor="username">Username</label>
           <input

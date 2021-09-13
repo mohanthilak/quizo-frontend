@@ -1,10 +1,12 @@
 import { useState, useContext } from "react";
 import "./signup.css";
 import { Button, Container } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { LoginContext } from "../../contexts/LoginContext";
 
 export default function SignUn() {
+  const history = useHistory();
   const { setIsLoggedIn } = useContext(LoginContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +23,7 @@ export default function SignUn() {
       console.log(res);
       if (res.data.created) {
         setIsLoggedIn(true);
+        history.push("/chat");
       }
     });
   };

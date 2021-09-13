@@ -6,7 +6,7 @@ export default function HomeHeader() {
     <div className="home_header">
       <h1>
         Pick an anime and check if you <br />
-        know your anime right.
+        know your anime right. Also chat with friends!
       </h1>
       <p>
         Choose your anime, answer the multiple choice questions to check your
