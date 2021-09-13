@@ -30,7 +30,10 @@ export default function SignIn(props) {
       if (res.data.loggedIn) {
         setIsLoggedIn(true);
         console.log("user Connected");
+        redirectText(false);
         history.push(redirectPath ? redirectPath : "/");
+      } else {
+        setRedirectText(res.data.message);
       }
     });
   };
