@@ -35,6 +35,7 @@ export default function Profile() {
       console.log(res.data);
       if (res.data.isLoggedIn) {
         setUser(res.data.user[0]);
+        console.log(res.data.user[0]);
         if (res.data.user[0].image) setImageLink(res.data.user[0].image);
       }
     });
@@ -60,7 +61,7 @@ export default function Profile() {
           <div className="image_div my-2">
             <img
               src={
-                user && imageLink
+                imageLink
                   ? imageLink
                   : "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg"
               }

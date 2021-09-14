@@ -53,6 +53,7 @@ export default function LeftSide({
           />
         )}
         <div>
+          {/* <label>Find eople</label> */}
           <input
             type="text"
             value={searchingUser}

@@ -70,6 +70,11 @@
   padding: 5px;
   font-size: 28px;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.name_div:hover {
+  background-color: rgb(225, 225, 225);
 }
 
 .name_div .name_text h6 {

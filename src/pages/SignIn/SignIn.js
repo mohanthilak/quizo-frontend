@@ -30,7 +30,7 @@ export default function SignIn(props) {
       if (res.data.loggedIn) {
         setIsLoggedIn(true);
         console.log("user Connected");
-        redirectText(false);
+        setRedirectText(false);
         history.push(redirectPath ? redirectPath : "/");
       } else {
         setRedirectText(res.data.message);
@@ -42,7 +42,13 @@ export default function SignIn(props) {
     <Container>
       <div className="signIn_page">
         <h3>Sign In</h3>
-        {redirectText ? <p>{redirectText}</p> : ""}
+        {redirectText ? (
+          <p style={{ marginBottom: "0px", fontWeight: "500" }}>
+            {redirectText}
+          </p>
+        ) : (
+          ""
+        )}
         <div>
           <label htmlFor="username">Username</label>
           <input

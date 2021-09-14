@@ -91,7 +91,11 @@ export default function RightSide({
               />
               <div className="image">
                 <img
-                  src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg"
+                  src={
+                    client.image
+                      ? client.image
+                      : "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg"
+                  }
                   alt=""
                 />
               </div>
