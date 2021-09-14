@@ -31,7 +31,7 @@ export default function SignUn() {
   return (
     <Container>
       <div className="signIn_page">
-        <h3>Sing Up</h3>
+        <h3>Sign Up</h3>
         <div>
           <label htmlFor="username">Username</label>
           <input
