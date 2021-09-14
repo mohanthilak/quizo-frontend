@@ -21,4 +21,5 @@ nav {
 
 .navbar-light .navbar-nav .nav-link:hover {
   color: rgba(0, 0, 0, 1);
+  border-bottom: 2px solid black;
 }
