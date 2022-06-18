@@ -59,6 +59,7 @@ export default function LeftSide({
             value={searchingUser}
             onChange={(e) => setSearchingUser(e.target.value)}
             onKeyPress={(e) => {
+              console.log(e.key);
               if (e.key === "Enter") {
                 searchUsers();
               }
