@@ -16,7 +16,6 @@ export default function RightSide({
   const messagesEndRef = useRef(null);
 
   const sendText = () => {
-    console.log(text, " message to be send");
     if (text === "") return;
     socket.emit("message", {
       message: text,
@@ -128,7 +127,6 @@ export default function RightSide({
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Message"
                 onKeyPress={(e) => {
-                  console.log(e.key);
                   if (e.key === "Enter") {
                     sendText();
                   }
