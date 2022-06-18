@@ -58,6 +58,11 @@ export default function LeftSide({
             type="text"
             value={searchingUser}
             onChange={(e) => setSearchingUser(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                searchUsers();
+              }
+            }}
             placeholder="Username"
           />
           <button onClick={searchUsers}>Search</button>
