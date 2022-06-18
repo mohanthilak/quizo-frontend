@@ -122,7 +122,7 @@ export default function RightSide({
             </div>
             <div className="typing_section">
               <input
-                type="text"
+                type="textarea"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Message"
