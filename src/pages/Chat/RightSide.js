@@ -127,7 +127,11 @@ export default function RightSide({
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Message"
-                onKeyPress={(e) => e.key === "Enter" && sendText}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") {
+                    sendText();
+                  }
+                }}
               />
               <button onClick={sendText}>Send</button>
             </div>
