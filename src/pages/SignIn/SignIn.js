@@ -25,7 +25,7 @@ export default function SignIn(props) {
         password: password,
       },
       withCredentials: true,
-      url: "https://quizzooo.herokuapp.com/login",
+      url: "https://quizo-api.onrender.com/login",
     }).then((res) => {
       if (res.data.loggedIn) {
         setIsLoggedIn(true);
