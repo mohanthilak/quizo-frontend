@@ -41,7 +41,7 @@ export default function Chat({ socket }) {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "https://quizzooo.herokuapp.com/user/getdata",
+      url: "https://quizo-api.onrender.com/user/getdata",
     }).then((res) => {
       console.log(res);
       if (res.data.isLoggedIn) {
