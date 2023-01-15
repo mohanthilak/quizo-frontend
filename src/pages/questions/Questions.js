@@ -16,7 +16,7 @@ export default function Questions() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `https://quizzooo.herokuapp.com/portals/${id}/questions`,
+      url: `https://quizo-api.onrender.com/portals/${id}/questions`,
     }).then((res) => {
       setQuestion(res.data.questions.questions[0]);
       setQuestions(res.data.questions.questions);
