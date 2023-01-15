@@ -13,7 +13,7 @@ export default function NavBar({ socket }) {
       method: "GET",
       withCredentials: true,
       //   url: "https://quizzooo.herokuapp.com/logout",
-      url: "https://quizzooo.herokuapp.com/logout",
+      url: "https://quizo-api.onrender.com/logout",
     }).then((res) => {
       if (res.data.isLoggedOut) {
         setIsLoggedIn(false);
@@ -28,7 +28,7 @@ export default function NavBar({ socket }) {
       method: "GET",
       withCredentials: true,
       //   url: "https://quizzooo.herokuapp.com/getuser",
-      url: "https://quizzooo.herokuapp.com/getuser",
+      url: "https://quizo-api.onrender.com/getuser",
     })
       .then((res) => {
         if (res.data.isLoggedIn) {
