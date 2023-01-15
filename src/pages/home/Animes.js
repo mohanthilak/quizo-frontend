@@ -9,7 +9,7 @@ export default function Animes() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "https://quizzooo.herokuapp.com/portals",
+      url: "https://quizo-api.onrender.com/portals",
     }).then((res) => {
       console.log(res);
       setPortals(res.data.portals);
