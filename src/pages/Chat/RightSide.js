@@ -42,7 +42,7 @@ export default function RightSide({
         userId: user._id,
         clientId: clientId,
       },
-      url: "https://quizzooo.herokuapp.com/checkchat",
+      url: "https://quizo-api.onrender.com/checkchat",
     }).then((res) => {
       setClient(res.data.client);
       if (res.data.textedBefore) {
