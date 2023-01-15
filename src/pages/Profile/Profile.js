@@ -19,7 +19,7 @@ export default function Profile() {
       method: "POST",
       withCredentials: true,
       data,
-      url: `https://quizzooo.herokuapp.com/image/${user._id}`,
+      url: `https://quizo-api.onrender.com/image/${user._id}`,
     }).then((res) => {
       console.log(res);
       setImageLink(res.data.path);
@@ -30,7 +30,7 @@ export default function Profile() {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "https://quizzooo.herokuapp.com/user/getdata",
+      url: "https://quizo-api.onrender.com/user/getdata",
     }).then((res) => {
       console.log(res.data);
       if (res.data.isLoggedIn) {
