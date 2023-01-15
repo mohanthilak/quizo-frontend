@@ -18,7 +18,7 @@ export default function SignUn() {
         password: password,
       },
       withCredentials: true,
-      url: "https://quizzooo.herokuapp.com/register",
+      url: "https://quizo-api.onrender.com/register",
     }).then((res) => {
       console.log(res);
       if (res.data.created) {
